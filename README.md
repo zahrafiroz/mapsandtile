@@ -9,13 +9,15 @@ https://geo.wa.gov/datasets/d4a6f3c1a45d48b9b31de9ebaf5af4ee_0/explore?location=
 
 ## Tile Map Number 1 Seattle:
 A basic street map of Seattle City. 
-
+(WA.jpg)
 ## Tile Map Number 2 Seattle NoHSDip:
 A map that is broken down by gradual symbol to show which areas in Seattle have a higher concentration of not having a High School Diploma by count. 
-
+(Seattle1.jpg)
 ## Tile Map Number 3:
 
-
+(SeattlenoHSDip.jpg)
 ## Tile Map Number 4:
+
+(SeattlenoHSDipPop.jpg)
 
 
