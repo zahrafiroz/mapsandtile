@@ -84,40 +84,40 @@
 
         map.on('load', () => { //simplifying the function statement: arrow with brackets to define a function
 
-            map.addSource('uw-tiles', {
+            map.addSource('Seattle1', {
                 'type': 'raster',
                 'tiles': [
-                    'assets/uw/{z}/{x}/{y}.png'
+                    'Seattle1/{z}/{x}/{y}.png'
                 ],
                 'tileSize': 256,
-                'attribution': 'Map tiles designed by Bo Zhao</a>'
+                'attribution': 'Map tiles designed by Zahra Firoz</a>'
             });
 
-            map.addSource('lgbtq-tiles', {
+            map.addSource('SeattlenoHSDip', {
                 'type': 'raster',
                 'tiles': [
-                    'assets/lgbtq/{z}/{x}/{y}.png'
+                    'SeattlenoHSDip/{z}/{x}/{y}.png'
                 ],
                 'tileSize': 256,
                 'attribution': 'Map tiles designed by Bo Zhao'
             });
 
             map.addLayer({
-                'id': 'uw',
+                'id': 'Seattle1',
                 'type': 'raster',
                 'layout': {
                     'visibility': 'none'
                 },
-                'source': 'uw-tiles'
+                'source': 'Seattle1'
             });
 
             map.addLayer({
-                'id': 'lgbtq',
+                'id': 'SeattlenoHSDip',
                 'type': 'raster',
                 'layout': {
                     'visibility': 'none'
                 },
-                'source': 'lgbtq-tiles'
+                'source': 'SeattlenoHSDip'
             });
 
         });
@@ -131,7 +131,7 @@
             }
 
             // Enumerate ids of the layers.
-            const toggleableLayerIds = ['uw', 'lgbtq'];
+            const toggleableLayerIds = ['Seattle1', 'SeattlenoHSDip'];
 
             // Set up the corresponding toggle button for each layer.
             for (const id of toggleableLayerIds) {
