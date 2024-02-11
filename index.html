@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Map Design</title>
+    <title>Maps and Tiles an analysis of Seattle</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://api.mapbox.com/mapbox-gl-js/v2.8.1/mapbox-gl.css" rel="stylesheet">
@@ -84,40 +84,40 @@
 
         map.on('load', () => { //simplifying the function statement: arrow with brackets to define a function
 
-            map.addSource('Seattle1', {
+            map.addSource('uw-tiles', {
                 'type': 'raster',
                 'tiles': [
-                    'Seattle1/{z}/{x}/{y}.png'
+                    'assets/uw/{z}/{x}/{y}.png'
                 ],
                 'tileSize': 256,
                 'attribution': 'Map tiles designed by Zahra Firoz</a>'
             });
 
-            map.addSource('SeattlenoHSDip', {
+            map.addSource('lgbtq-tiles', {
                 'type': 'raster',
                 'tiles': [
-                    'SeattlenoHSDip/{z}/{x}/{y}.png'
+                    'assets/lgbtq/{z}/{x}/{y}.png'
                 ],
                 'tileSize': 256,
-                'attribution': 'Map tiles designed by Bo Zhao'
+                'attribution': 'Map tiles designed by Zahra Firoz'
             });
 
             map.addLayer({
-                'id': 'Seattle1',
+                'id': 'uw',
                 'type': 'raster',
                 'layout': {
                     'visibility': 'none'
                 },
-                'source': 'Seattle1'
+                'source': 'uw-tiles'
             });
 
             map.addLayer({
-                'id': 'SeattlenoHSDip',
+                'id': 'lgbtq',
                 'type': 'raster',
                 'layout': {
                     'visibility': 'none'
                 },
-                'source': 'SeattlenoHSDip'
+                'source': 'lgbtq-tiles'
             });
 
         });
@@ -131,7 +131,7 @@
             }
 
             // Enumerate ids of the layers.
-            const toggleableLayerIds = ['Seattle1', 'SeattlenoHSDip'];
+            const toggleableLayerIds = ['uw', 'lgbtq'];
 
             // Set up the corresponding toggle button for each layer.
             for (const id of toggleableLayerIds) {
