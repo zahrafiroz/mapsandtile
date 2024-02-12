@@ -84,54 +84,86 @@
 
         map.on('load', () => { //simplifying the function statement: arrow with brackets to define a function
 
-            map.addSource('uw-tiles', {
+            map.addSource('WA-tiles', {
                 'type': 'raster',
                 'tiles': [
-                    'assets/uw/{z}/{x}/{y}.png'
+                    'Seattle1/{z}/{x}/{y}.png'
                 ],
                 'tileSize': 256,
                 'attribution': 'Map tiles designed by Zahra Firoz</a>'
             });
 
-            map.addSource('lgbtq-tiles', {
+            map.addSource('Seattle-tiles', {
                 'type': 'raster',
                 'tiles': [
-                    'assets/lgbtq/{z}/{x}/{y}.png'
+                    'SeattlenoHSDip/{z}/{x}/{y}.png'
                 ],
                 'tileSize': 256,
                 'attribution': 'Map tiles designed by Zahra Firoz'
             });
+map.addSource('SeattlenoHSDip-tiles', {
+                'type': 'raster',
+                'tiles': [
+                    'SeattlenoHSDipCent/{z}/{x}/{y}.png'
+                ],
+                'tileSize': 256,
+                'attribution': 'Map tiles designed by Zahra Firoz</a>'
+            });
 
+            map.addSource('SeanoHSDipPop-tiles', {
+                'type': 'raster',
+                'tiles': [
+                    'SeattlenoHSDipPop/{z}/{x}/{y}.png'
+                ],
+                'tileSize': 256,
+                'attribution': 'Map tiles designed by Zahra Firoz'
+            });
             map.addLayer({
-                'id': 'uw',
+                'id': 'Seattle1',
                 'type': 'raster',
                 'layout': {
                     'visibility': 'none'
                 },
-                'source': 'uw-tiles'
+                'source': 'Seattle1-tiles'
             });
 
             map.addLayer({
-                'id': 'lgbtq',
+                'id': 'SeattlenoHSDip',
                 'type': 'raster',
                 'layout': {
                     'visibility': 'none'
                 },
-                'source': 'lgbtq-tiles'
+                'source': 'SeattlenoHSDip-tiles'
+            });
+map.addLayer({
+                'id': 'SeattlenoHSDipCent',
+                'type': 'raster',
+                'layout': {
+                    'visibility': 'none'
+                },
+                'source': 'SeattlenoHSDipCent-tiles'
             });
 
+            map.addLayer({
+                'id': 'SeattlenoHSDipPop',
+                'type': 'raster',
+                'layout': {
+                    'visibility': 'none'
+                },
+                'source': 'SeattlenoHSDipPop-tiles'
+            });
         });
 
 
         // After the last frame rendered before the map enters an "idle" state.
         map.on('idle', () => {
             // If these two layers were not added to the map, abort
-            if (!map.getLayer('uw') || !map.getLayer('lgbtq')) {
+            if (!map.getLayer('Seattle1') || !map.getLayer('SeattlenoHSDip')) {
                 return;
             }
 
             // Enumerate ids of the layers.
-            const toggleableLayerIds = ['uw', 'lgbtq'];
+            const toggleableLayerIds = ['Seattle1', 'SeattlenoHSDip'];
 
             // Set up the corresponding toggle button for each layer.
             for (const id of toggleableLayerIds) {
